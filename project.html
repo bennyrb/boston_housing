@@ -11779,7 +11779,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Import libraries necessary for this project</span>
@@ -11851,36 +11851,23 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span>prices.std<span class="o">?</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Minimum price of the data</span>
-<span class="n">minimum_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="n">minimum_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># Maximum price of the data</span>
-<span class="n">maximum_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="n">maximum_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># Mean price of the data</span>
-<span class="n">mean_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">mean_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># Median price of the data</span>
-<span class="n">median_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+<span class="n">median_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># Standard deviation of prices of the data</span>
-<span class="n">std_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="n">std_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># Show the calculated statistics</span>
 <span class="k">print</span> <span class="s2">&quot;Statistics for Boston housing dataset:</span><span class="se">\n</span><span class="s2">&quot;</span>
@@ -11907,7 +11894,7 @@ Minimum price: $105,000.00
 Maximum price: $1,024,800.00
 Mean price: $454,342.94
 Median price $438,900.00
-Standard deviation of prices: $165,340.28
+Standard deviation of prices: $165,171.13
 </pre>
 </div>
 </div>
@@ -11944,9 +11931,9 @@ Standard deviation of prices: $165,340.28
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
-<p><code>'RM'</code>: I expect an increase in <code>'RM'</code> to lead to an <strong>increase</strong> in <code>'MEDV'</code>.</p>
-<p><code>'LSTAT'</code>: I expect an increase in <code>'LSTAT'</code> to lead to a <strong>decrease</strong> in <code>'MEDV'</code>.</p>
-<p><code>'PTRATIO'</code>: I expect an increase in <code>'PTRATIO'</code> to lead to a <strong>decrease</strong> in <code>'MEDV'</code>.</p>
+<p><code>'RM'</code>: I expect an increase in <code>'RM'</code> to lead to an <strong>increase</strong> in <code>'MEDV'</code> since more rooms in a house typically means a larger lot (land area), more materials, more square footage, and more labor to build and maintain, all resulting in a higher price.</p>
+<p><code>'LSTAT'</code>: I expect an increase in <code>'LSTAT'</code> to lead to a <strong>decrease</strong> in <code>'MEDV'</code> because that indicates a neighborhood with a lower-income population. Therefore, the neighbors will not be able to afford much and home values will be correspondingly lower, possibly because they are smaller houses, are in worse condition, are in higher-crime area, or local schools are lower quality, etc.</p>
+<p><code>'PTRATIO'</code>: I expect an increase in <code>'PTRATIO'</code> to lead to a <strong>decrease</strong> in <code>'MEDV'</code> because that means classrooms on average have more students that a teacher must attend to. This in turn means each student gets less chance to have individual attention and help from the teacher, so average performance will likely be lower since less help is available.</p>
 
 </div>
 </div>
@@ -13260,7 +13247,7 @@ Think about the pros and cons of adding more training points based on if the tra
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> I am considering the graph of max_depth = 3. The score of the training curve appears to have reached an asymptote at around 0.8, so using more data points will probably not improve the training score. The same is true for the testing score, which also seems to be asymptoting at around 0.8, converging with the testing score. Having more data points will also probably not improve the testing score.</p>
+<p><strong>Answer: </strong> Let's consider the graph of max_depth = 3. The score of the training curve appears to have reached an asymptote at around 0.8, so using more data points will probably not improve the training score. The same is true for the testing score, which also seems to be asymptoting at around 0.8, converging with the testing score. Having more data points will also probably not improve the testing score.</p>
 
 </div>
 </div>
@@ -13742,7 +13729,7 @@ Z4wxJmBYT88YY0zAsJ6eMcaYgGFJzxhjTMCwpGeMMSZgWNIzxhgTMCzpGWOMCRiW9IwxxgSM/weK
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> I think a maximum depth of 3 gives the performance and tradeoff between overfitting and underfitting. We want the training score to be similar to the validation score and we want both to be relatively high. Using a max depth of 2 gives training and validation scores that are close to each other, but they are relatively low. Uing a max depth of 4 gives a noticeably higher training score, but only marginally higher validation score, and the two scores are beginning to diverge, suggesting the onset of overfitting. The max depth of 3 gives the best balance of having relatively high scores results while still keeping the training and validation scores close to each other.</p>
+<p><strong>Answer: </strong> I think a maximum depth of 3 gives the best performance and best tradeoff between overfitting and underfitting. We want the training score to be similar to the validation score and we want both to be relatively high. Using a max depth of 2 gives training and validation scores that are close to each other, but they are relatively low. Using a max depth of 4 gives a noticeably higher training score, but only marginally higher validation score, and the two scores are beginning to diverge, suggesting the onset of overfitting. The max depth of 3 gives the best balance of having relatively high scores for both training and validation while still keeping the two scores close to each other.</p>
 
 </div>
 </div>
@@ -13944,7 +13931,7 @@ For the <code>fit_model</code> function in the code cell below, you will need to
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong> Hint: </strong> The answer comes from the output of the code snipped above.</p>
-<p><strong>Answer: </strong> The optimal model has max_depth of 4.</p>
+<p><strong>Answer: </strong> The optimal model has max_depth of 4. This is in contrast to Question 6, where the optimal model had a max_depth of 3. The difference in their results is because in Q6 each model (of differing max_depth value) was trained and tested on the same training and test sets. So if a particular parameter/hyper-parameter happened to fit that data split well, it will produce better results than other parameters. However, this makes it susceptible to overfitting and producing a model that does not generalize well, more likely producing poorer performance when used on real-world data. To remove the chance of overfitting to a particular training/test split, the <code>fit_model</code> function here splits the data into 10 equal segments and shuffles which segments will be used for training and which for validation. This reduces the possibility of having a model overfit to any particular data split, and therefore more likely to be better generalized.</p>
 
 </div>
 </div>
@@ -14118,7 +14105,7 @@ Range in prices: $73,357.39
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> I don't think this model should be used since it produces prices as low as \$351,577 and as high as \$424,935, giving a huge range of \$73,357. I don't believe the data from 1978 is valid since housing prices have so many factors affecting them, even when adjusted for inflation. However, the data may be useful for identifying broad, long-term trends, but there is too much variability in the predictions to consider it a "robust" model. In a setting like a major city like Boston, areas that may have been poor in the past could have been gentrified, as we can see in many examples of major cities across the U.S., or richer areas may have declined, thus profoundly affecting the prices over such a large time span of 39 years from 1978 till today. The highly time-dependent nature of housing areas and cultural &amp; socio-economic trends means that it is important to use recent data that captures these trends which are undetectable with decades-old data. This also leads to the fact that the value of a home is influenced by many other factors beyond those considered by this model, such as accessibility to mass transit and highways; proximity to highly ranked schools; proximity to shopping and activity/recreation areas; local crime rates; newness of interiors and appliances; etc. These elements may not have been important or recognized as important in 1978, and therefore not measured at that time, but are increasingly playing a strong role in today's housing values. In other, less dynamic/volatile markets than Boston, such as rural areas, such a model may prove more applicable since those areas may experience less change over time and therefore be more simply affected by inflation, rather than other complex factors like gentrification. I do believe that it is extremely important to consider factors that are indicators of neighborhood quality since psychology plays one of the largest roles in determining the desirability of a house, not just the objective values of materials, construction, and appliances that constitute the house.</p>
+<p><strong>Answer: </strong> I don't think this model should be used since it produces prices as low as \$351,577 and as high as \$424,935, giving a huge range of \$73,357. I don't believe the data from 1978 is valid since housing prices have so many factors affecting them, even when adjusted for inflation. However, the data may be useful for identifying broad, long-term trends, but there is too much variability in the predictions to consider it a "robust" model. In a setting like a major city such as Boston, areas that may have been poor in the past may have since been gentrified, as we can see happening in many major cities across the U.S. today; or richer areas may have declined, thus profoundly affecting the prices over such a large time span of 39 years from 1978 till today. The highly time-dependent nature of housing areas and cultural &amp; socio-economic trends means that it is important to use recent data that captures these trends which are undetectable with decades-old data. This also leads to the fact that the value of a home is influenced by many other factors beyond those considered by this model, such as accessibility to mass transit and highways; proximity to highly ranked schools; proximity to shopping and activity/recreation areas; local crime rates; newness of interiors and appliances; etc. These elements may not have been important or recognized as important in 1978, and therefore not measured at that time, but are increasingly playing a strong role in today's housing values. In other, less dynamic/volatile markets than Boston, such as rural areas, such a model may prove more applicable since those areas may experience less change over time and therefore be more simply affected by inflation, rather than other complex factors like gentrification. I do believe that it is extremely important to consider factors that are indicators of neighborhood quality since psychology plays one of the largest roles in determining the desirability of a house, not just the objective values of materials, construction, and appliances that constitute the house.</p>
 
 </div>
 </div>
